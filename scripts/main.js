@@ -5,7 +5,8 @@
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle?.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
   // Smooth scroll and scroll-spy
@@ -81,13 +82,14 @@
   // Copy email
   const copyBtn = document.getElementById('copyEmail');
   const copyToast = document.getElementById('copyToast');
-  const email = 'zeyad@example.com';
+  const email = 'zeyad.elmaghraby@gmail.com';
   copyBtn?.addEventListener('click', async () => {
     try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
       await navigator.clipboard.writeText(email);
       copyToast.textContent = 'Copied!';
     } catch (err) {
-      copyToast.textContent = 'Copy failed — use zeyad@example.com';
+      copyToast.textContent = 'Copy failed - use zeyad.elmaghraby@gmail.com';
     }
     setTimeout(() => copyToast.textContent = '', 2000);
   });

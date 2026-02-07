@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zeyadelmaghraby.github.io/interactive-engineer-portfolio/sitemap.xml
