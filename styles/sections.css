@@ -1,0 +1,142 @@
+.projects .card,
+.writing .card,
+.testimonials .card,
+.play-card {
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.projects .card:hover,
+.writing .card:hover,
+.testimonials .card:hover,
+.play-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.28);
+}
+
+.play-card canvas,
+.play-card .play-output {
+  border-radius: var(--radius-md);
+}
+
+.play-card .code-toggle {
+  justify-content: flex-start;
+}
+
+.process {
+  position: relative;
+  overflow: hidden;
+}
+
+.process__steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.process__card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface-1) 90%, transparent);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(18px);
+  opacity: 0;
+  transition: transform 320ms ease, opacity 320ms ease, border-color var(--transition);
+  position: relative;
+  min-width: 0;
+  padding-right: 36px;
+}
+
+.process__card:hover {
+  border-color: var(--accent);
+}
+
+.process__card:not(:last-child)::after {
+  content: none;
+}
+
+.process__card:not(:last-child)::before {
+  content: none;
+}
+
+.process__card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.process__dot {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28), inset 0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent);
+  position: relative;
+}
+
+.process__dot::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+.process__body p {
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .process__steps {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .process__steps {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .process__card {
+    padding-right: 18px;
+    padding-bottom: 24px;
+  }
+  .process__card::before,
+  .process__card::after {
+    display: none;
+  }
+}
+
+.writing .note header h3 {
+  margin: 0 0 6px;
+}
+
+.writing .note__excerpt {
+  color: var(--muted);
+}
+
+.playground .section__head {
+  margin-bottom: 24px;
+}
+
+.contact .mono {
+  font-size: 1.1rem;
+}
+
+.site-header,
+.section,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}

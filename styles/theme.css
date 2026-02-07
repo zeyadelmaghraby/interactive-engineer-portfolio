@@ -1,0 +1,23 @@
+:root {
+  --bg: #0c0f18;
+  --surface-1: #111827;
+  --surface-2: #1a2235;
+  --border: rgba(255,255,255,0.08);
+  --text: #e8ecf7;
+  --muted: #a7b3ce;
+  --accent: #54ffe0;
+  --accent-2: #9d7bff;
+  --warning: #f7d154;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f7f8fb;
+  --surface-1: #ffffff;
+  --surface-2: #edf0f7;
+  --border: rgba(12,18,40,0.08);
+  --text: #0d1322;
+  --muted: #5a647a;
+  --accent: #0fb5a5;
+  --accent-2: #6a4bff;
+}
